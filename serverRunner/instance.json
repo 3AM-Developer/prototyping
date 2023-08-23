@@ -1,0 +1,7 @@
+{
+    "name": "TheFarm",
+    "java-path": "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+    "rcon-port": "25575",
+    "rcon-pw": "",
+    "start-script": "start.sh"
+}

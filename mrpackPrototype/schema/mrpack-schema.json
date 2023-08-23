@@ -1,0 +1,288 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "formatVersion",
+        "game",
+        "versionId",
+        "name",
+        "files",
+        "dependencies"
+    ],
+    "properties": {
+        "formatVersion": {
+            "type": "integer",
+            "default": 1,
+            "title": "The formatVersion Schema",
+            "examples": [
+                1
+            ]
+        },
+        "game": {
+            "type": "string",
+            "default": "",
+            "title": "The game Schema",
+            "examples": [
+                "minecraft"
+            ]
+        },
+        "versionId": {
+            "type": "string",
+            "default": "",
+            "title": "The versionId Schema",
+            "examples": [
+                "a12s4asfd4"
+            ]
+        },
+        "name": {
+            "type": "string",
+            "default": "",
+            "title": "The name Schema",
+            "examples": [
+                "This Is a Packname"
+            ]
+        },
+        "summary": {
+            "type": "string",
+            "default": null,
+            "title": "The summary Schema",
+            "examples": [
+                "This is a summary"
+            ]
+        },
+        "files": {
+            "type": "array",
+            "default": [],
+            "title": "The files Schema",
+            "items": {
+                "type": "object",
+                "default": {},
+                "title": "A Schema",
+                "required": [
+                    "path",
+                    "hashes",
+                    "downloads",
+                    "fileSize"
+                ],
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The path Schema",
+                        "examples": [
+                            "mods/name.jar"
+                        ]
+                    },
+                    "hashes": {
+                        "type": "object",
+                        "default": {},
+                        "title": "The hashes Schema",
+                        "required": [
+                            "sha1",
+                            "sha512"
+                        ],
+                        "properties": {
+                            "sha1": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The sha1 Schema",
+                                "examples": [
+                                    "cc297357ff0031f805a744ca3a1378a112c2ddf4"
+                                ]
+                            },
+                            "sha512": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The sha512 Schema",
+                                "examples": [
+                                    "d0760a2df6f123fb3546080a85f3a44608e1f8ad9f9f7c57b5380cf72235ad380a5bbd494263639032d63bb0f0c9e0847a62426a6028a73a4b4c8e7734b4e8f5"
+                                ]
+                            }
+                        },
+                        "examples": [{
+                            "sha1": "cc297357ff0031f805a744ca3a1378a112c2ddf4",
+                            "sha512": "d0760a2df6f123fb3546080a85f3a44608e1f8ad9f9f7c57b5380cf72235ad380a5bbd494263639032d63bb0f0c9e0847a62426a6028a73a4b4c8e7734b4e8f5"
+                        }]
+                    },
+                    "env": {
+                        "type": "object",
+                        "default": {},
+                        "title": "The env Schema",
+                        "required": [
+                            "client",
+                            "server"
+                        ],
+                        "properties": {
+                            "client": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The client Schema",
+                                "examples": [
+                                    "required",
+                                    "unsupported",
+                                    "optional"
+                                ]
+                            },
+                            "server": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The server Schema",
+                                "examples": [
+                                    "required",
+                                    "unsupported",
+                                    "optional"
+                                ]
+                            }
+                        },
+                        "examples": [{
+                            "client": "required",
+                            "server": "unsupported"
+                        }]
+                    },
+                    "downloads": {
+                        "type": "array",
+                        "default": [],
+                        "title": "The downloads Schema",
+                        "items": {
+                            "type": "string",
+                            "default": "",
+                            "title": "A Schema",
+                            "examples": [
+                                "https://zip.org"
+                            ]
+                        },
+                        "examples": [
+                            [
+                                "https://zip.org"]
+                        ]
+                    },
+                    "fileSize": {
+                        "type": "integer",
+                        "default": 0,
+                        "title": "The fileSize Schema",
+                        "examples": [
+                            13
+                        ]
+                    }
+                },
+                "examples": [{
+                    "path": "mods/name.jar",
+                    "hashes": {
+                        "sha1": "cc297357ff0031f805a744ca3a1378a112c2ddf4",
+                        "sha512": "d0760a2df6f123fb3546080a85f3a44608e1f8ad9f9f7c57b5380cf72235ad380a5bbd494263639032d63bb0f0c9e0847a62426a6028a73a4b4c8e7734b4e8f5"
+                    },
+                    "env": {
+                        "client": "required",
+                        "server": "unsupported"
+                    },
+                    "downloads": [
+                        "https://zip.org"
+                    ],
+                    "fileSize": 13
+                }]
+            },
+            "examples": [
+                [{
+                    "path": "mods/name.jar",
+                    "hashes": {
+                        "sha1": "cc297357ff0031f805a744ca3a1378a112c2ddf4",
+                        "sha512": "d0760a2df6f123fb3546080a85f3a44608e1f8ad9f9f7c57b5380cf72235ad380a5bbd494263639032d63bb0f0c9e0847a62426a6028a73a4b4c8e7734b4e8f5"
+                    },
+                    "env": {
+                        "client": "required",
+                        "server": "unsupported"
+                    },
+                    "downloads": [
+                        "https://zip.org"
+                    ],
+                    "fileSize": 13
+                }]
+            ]
+        },
+        "dependencies": {
+            "type": "object",
+            "default": {},
+            "title": "The dependencies Schema",
+            "required": [
+            ],
+            "properties": {
+                "minecraft": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The minecraft Schema",
+                    "examples": [
+                        "1.18.2"
+                    ]
+                },
+                "forge": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The forge Schema",
+                    "examples": [
+                        "40.1.0"
+                    ]
+                },
+                "neoforge": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The neoforge Schema",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "fabric-loader": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The fabric-loader Schema",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "quilt-loader": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The quilt-loader Schema",
+                    "examples": [
+                        ""
+                    ]
+                }
+            },
+            "examples": [{
+                "minecraft": "1.18.2",
+                "forge": "40.1.0",
+                "neoforge": "",
+                "fabric-loader": "",
+                "quilt-loader": ""
+            }]
+        }
+    },
+    "examples": [{
+        "formatVersion": 1,
+        "game": "minecraft",
+        "versionId": "a12s4asfd4",
+        "name": "This Is a Packname",
+        "summary": null,
+        "files": [{
+            "path": "mods/name.jar",
+            "hashes": {
+                "sha1": "cc297357ff0031f805a744ca3a1378a112c2ddf4",
+                "sha512": "d0760a2df6f123fb3546080a85f3a44608e1f8ad9f9f7c57b5380cf72235ad380a5bbd494263639032d63bb0f0c9e0847a62426a6028a73a4b4c8e7734b4e8f5"
+            },
+            "env": {
+                "client": "required",
+                "server": "unsupported"
+            },
+            "downloads": [
+                "https://zip.org"
+            ],
+            "fileSize": 13
+        }],
+        "dependencies": {
+            "minecraft": "1.18.2",
+            "forge": "40.1.0"
+        }
+    }]
+}
